@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Chef List</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Chef List</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Image</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="chef : ${chefs}">
+    <td th:text="${chef.chefId}"></td>
+    <td th:text="${chef.chefName}"></td>
+    <td th:text="${chef.chefCategory}"></td>
+    <td><img th:src="${chef.chefImage}" alt="Chef Image" width="100"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
