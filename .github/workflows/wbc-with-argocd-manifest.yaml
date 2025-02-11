@@ -26,7 +26,7 @@ jobs:
       shell: bash
 
     - name: Build with Gradle
-      run: gradle build -x test 
+      run: gradlew build -x test 
       
     - name: Naming jar file
       run: mv ./build/libs/*.jar ./build/libs/app.jar
