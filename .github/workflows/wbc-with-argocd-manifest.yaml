@@ -65,8 +65,8 @@ jobs:
     
     - name: Set up Image
       run: |
-        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/wbc:[A-z0-9]*%image: ${{ secrets.DOCKERHUB_USERNAME }}/wbc:${{ github.sha }}%" ./manifest/wbc-app.yaml
-
+        sed -i 's|image: \${{ secrets.DOCKERHUB_USERNAME }}/wbc:[A-z0-9]*|image: \${{ secrets.DOCKERHUB_USERNAME }}/wbc:\${{ github.sha }}|g' ./manifest/wbc-app.yaml
+    
     - name: Commit and push changes
       run: |
         git config --local user.email "linkpond0629@gmail.com"
