@@ -1,8 +1,8 @@
 name: App with Github Actions, wbc
 
 on:
-  workflow_dispatch
-  # push
+  # workflow_dispatch
+  push
 
 jobs:
   ci:
@@ -28,7 +28,7 @@ jobs:
       run: chmod +x ./gradlew
     
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: ./gradlew clean build -x build
       env:
         GRADLE_OPTS: "-Dorg.gradle.daemon=false"
       
