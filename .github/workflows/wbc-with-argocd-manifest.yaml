@@ -24,6 +24,13 @@ jobs:
         echo "${{ secrets.PROPERTIES }}" > ./application.properties
       shell: bash
 
+    - name: Cache Gradle packages
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+
     - name: Grant execute permission for Gradle Wrapper
       run: chmod +x ./gradlew
     
