@@ -57,11 +57,11 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}
     
-    - uses: actions/checkout@v4
-      with:
-        repository: linkpond/wbc-manifest
-        ref: main
-        token: ${{ secrets.TOKEN }}
+    # - uses: actions/checkout@v4
+    #   with:
+    #     repository: linkpond/wbc-manifest
+    #     ref: main
+    #     token: ${{ secrets.TOKEN }}
     
     - name: Set up Image
       run: |
